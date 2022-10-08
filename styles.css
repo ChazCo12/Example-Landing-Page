@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+:root{
+    --background: #1B2430;
+    --mainBleu: #00FFAB
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--background);
+}
+
+/* Navbar Section*/
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+.headingSection{
+    display: flex;
+    align-items: center;
+}
+
+.navIcon{
+    color: var(--mainBleu);
+    font-size: 50px;
+    padding: 20px;
+}
+
+.headingSection h2{
+    font-family: "Ubuntu";
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.contact{
+    
+    font-family: "Ubuntu" ;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 15px;
+    background-color: transparent;
+    padding: 10px;
+    border-top-left-radius:17px;
+    border-top-right-radius:17px;
+    border-bottom-left-radius:17px;
+    border-bottom-right-radius:17px;
+    border: 2px solid var(--mainBleu);
+    transition: 0.25s ease-in;
+}
+
+.contact:hover{
+    
+    background-color: var(--mainBleu);
+    box-shadow: 0 0 5px var(--mainBleu),
+    0 0 25px var(--mainBleu),
+    0 0 50px var(--mainBleu),
+    0 0 100px var(--mainBleu);
+
+}
+
+/* Animation Area */
+
+.boxArea{
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.boxArea li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: 2px solid var(--mainBleu);
+    animation: animate 20s linear infinite;
+    bottom: -120px;
+}
+
+.boxArea li:nth-child(1){
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 0s;
+    animation-duration: 15s ;
+}
+
+.boxArea li:nth-child(2){
+    left: 18%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+    animation-duration: 14s ;
+}
+.boxArea li:nth-child(3){
+    left: 25%;
+    width: 35px;
+    height: 35px;
+    animation-delay: 3s;
+    animation-duration: 19s ;
+}
+.boxArea li:nth-child(4){
+    left: 45%;
+    width: 55px;
+    height: 55px;
+    animation-delay: 10s;
+    animation-duration: 20s ;
+}
+.boxArea li:nth-child(5){
+    left: 57%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 6s;
+    animation-duration: 25s ;
+}
+.boxArea li:nth-child(6){
+    left: 68%;
+    width: 45px;
+    height: 45px;
+    animation-delay: 12s;
+    animation-duration: 10s ;
+}
+.boxArea li:nth-child(7){
+    left: 80%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 7s;
+    animation-duration: 15s ;
+}
+.boxArea li:nth-child(8){
+    left: 92%;
+    width: 70px;
+    height: 70px;
+    animation-delay: 5s;
+    animation-duration: 20s ;
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/*Text Area*/
+
+.textArea{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.mainIcon{
+    color: var(--mainBleu);
+    font-size: 250px;
+    padding: 20px;
+}
+
+.textArea h2{
+    font-family: "Ubuntu";
+    font-size: 50px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 8px;
+    margin: 6px;
+}
+
+.textArea p{
+    font-family: "Ubuntu";
+    font-size: 20px;
+    color: #c0cccc;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+a{
+    position: absolute;
+    left: 50%;
+    top: 76%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    width: 260px;
+    height: 65px;
+    align-content: center;
+    font-family: "Ubuntu";
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-decoration: none;
+    line-height: 60px;
+    text-align: center;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainBleu);
+    z-index: -1;
+    transition: 0.5s;
+}
+
+a:hover{
+    color: var(--mainBleu);
+}
+
+a:hover::before{
+    top: calc(100% - 2px);
+}
+
+/*Responsiveness*/
+
+@media(max-width: 460px){
+    a{
+        top: 90%;
+    }
+    .textArea{
+        top: 50%;
+        width: 350px;
+    }
+    .mainIcon{
+        font-size: 175px;
+    }
+    .textArea h2{
+        font-size: 25px;
+    }
+    .textArea p{
+        font-size: 15px;
+    }
+    .headingSection h2{
+        font-size: 20px ;
+    }
+}
